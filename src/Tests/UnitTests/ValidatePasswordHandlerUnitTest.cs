@@ -3,7 +3,7 @@ using Domain.Commands;
 using System.Threading;
 using Xunit;
 
-namespace Tests.Application
+namespace Tests.UnitTests
 {
     public class ValidatePasswordHandleUnitTest
     {
