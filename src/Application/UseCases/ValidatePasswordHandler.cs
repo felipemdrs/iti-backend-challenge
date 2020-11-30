@@ -9,6 +9,7 @@ namespace Application.UseCases
 {
     public class ValidatePasswordHandler : IRequestHandler<ValidatePassword, bool>
     {
+        private const int MinPasswordLength = 8;
 
         private readonly char[] SpecialChars = "!@#$%^&*()-+".ToCharArray();
 
@@ -19,17 +20,17 @@ namespace Application.UseCases
 
         private bool IsValidPassword(string password)
         {
-            if (password.Length <= 8 || !HasUniqueCharacters(password))
+            if (password.Length <= MinPasswordLength || !HasUniqueCharacters(password))
             {
                 return false;
             }
 
             var currentScore = 0;
 
-            var sawUpper = false;
-            var sawLower = false;
-            var sawDigit = false;
-            var sawSpecial = false;
+            var hasUpper = false;
+            var hasLower = false;
+            var hasDigit = false;
+            var hasSpecial = false;
 
             foreach (var c in password)
             {
@@ -38,32 +39,32 @@ namespace Application.UseCases
                     return false;
                 }
 
-                if (!sawSpecial && IsSpecial(c))
+                if (!hasSpecial && IsSpecial(c))
                 {
                     currentScore += 1;
-                    sawSpecial = true;
+                    hasSpecial = true;
                 }
                 else
                 {
-                    if (!sawDigit && char.IsDigit(c))
+                    if (!hasDigit && char.IsDigit(c))
                     {
                         currentScore += 1;
-                        sawDigit = true;
+                        hasDigit = true;
                     }
                     else
                     {
-                        if (!sawUpper || !sawLower)
+                        if (!hasUpper || !hasLower)
                         {
                             if (!char.IsUpper(c))
                             {
-                                sawUpper = true;
+                                hasUpper = true;
                             } 
                             else
                             {
-                                sawLower = true;
+                                hasLower = true;
                             }
 
-                            if (sawUpper && sawLower)
+                            if (hasUpper && hasLower)
                             {
                                 currentScore += 1;
                             }
@@ -72,7 +73,7 @@ namespace Application.UseCases
                 }
             }
 
-            if (!sawSpecial || !sawUpper || !sawLower || !sawDigit)
+            if (!hasSpecial || !hasUpper || !hasLower || !hasDigit)
             {
                 return false;
             }

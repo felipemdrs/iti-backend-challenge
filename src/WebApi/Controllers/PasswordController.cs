@@ -17,6 +17,8 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("validate")]
+        [Consumes("application/json")]
+        [Produces("application/json")]
         public async Task<IActionResult> Validate([FromBody] ValidatePassword validatePassword)
         {
             if (!ModelState.IsValid)

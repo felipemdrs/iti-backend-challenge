@@ -23,6 +23,7 @@ namespace WebApi
         {
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
             services.AddApplication();
+            services.AddSwaggerGen();
 
             services.AddControllers();
         }
@@ -34,6 +35,12 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Iti backend challenge");
+            });
 
             app.UseRouting();
 
