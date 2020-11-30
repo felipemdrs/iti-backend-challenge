@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Domain.Commands;
-using Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,10 +28,7 @@ namespace WebApi.Controllers
 
             var isValid = await _mediator.Send(validatePassword).ConfigureAwait(false);
 
-            return Ok(new TransferModel<bool>()
-            {
-                Data = isValid
-            });
+            return Ok(isValid);
         }
     }
 }

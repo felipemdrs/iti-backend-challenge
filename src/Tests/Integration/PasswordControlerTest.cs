@@ -1,9 +1,6 @@
 ﻿using Domain.Commands;
-using Domain.Models;
-using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -58,9 +55,9 @@ namespace Tests.Integration
 
             var content = await result.Content.ReadAsStringAsync();
 
-            var data = JsonConvert.DeserializeObject<TransferModel<bool>>(content);
+            var data = JsonConvert.DeserializeObject<bool>(content);
 
-            Assert.True(data.Data);
+            Assert.True(data);
         }
 
         [Fact]
@@ -79,9 +76,9 @@ namespace Tests.Integration
 
             var content = await result.Content.ReadAsStringAsync();
 
-            var data = JsonConvert.DeserializeObject<TransferModel<bool>>(content);
+            var data = JsonConvert.DeserializeObject<bool>(content);
 
-            Assert.False(data.Data);
+            Assert.False(data);
         }
     }
 }
