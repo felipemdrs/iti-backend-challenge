@@ -7,3 +7,6 @@ C:\Users\felip\source\repos\iti-backend-challenge\src\Application\bin\Debug\netc
 C:\Users\felip\source\repos\iti-backend-challenge\src\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
 C:\Users\felip\source\repos\iti-backend-challenge\src\Application\obj\Debug\netcoreapp3.1\Application.dll
 C:\Users\felip\source\repos\iti-backend-challenge\src\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\Users\felip\source\repos\iti-backend-challenge\src\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\felip\source\repos\iti-backend-challenge\src\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\felip\source\repos\iti-backend-challenge\src\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete

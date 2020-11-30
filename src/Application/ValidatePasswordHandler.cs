@@ -1,12 +1,25 @@
-﻿using System;
+﻿using Domain.Commands;
+using MediatR;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application
 {
-    public class ValidatePasswordHandler
+    public class ValidatePasswordHandler : IRequestHandler<ValidatePassword, bool>
     {
+
+        private readonly char[] SpecialChars = "!@#$%^&*()-+".ToCharArray();
+
+        public Task<bool> Handle(ValidatePassword request, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(IsValidPassword(request.Password));
+        }
+
         private bool IsValidPassword(string password)
         {
-            if (password.Length <= 8 && !HasUniqueCharacters(password))
+            if (password.Length <= 8 || !HasUniqueCharacters(password))
             {
                 return false;
             }
@@ -25,7 +38,7 @@ namespace Application
                     return false;
                 }
 
-                if (!sawSpecial && !char.IsLetterOrDigit(c))
+                if (!sawSpecial && IsSpecial(c))
                 {
                     currentScore += 1;
                     sawSpecial = true;
@@ -71,6 +84,8 @@ namespace Application
                 _ => true,
             };
         }
+
+        private bool IsSpecial(char value) => SpecialChars.Contains(value);
 
         private bool HasUniqueCharacters(string value)
         {

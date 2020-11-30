@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mRbJavHcStafvUPh11foSOvz9Gmc1NprWVjTQ6oyacZRNO1BMuyYxKFXsGPvDNKtPnPouyRVlYlkFaBS/Aw/UA==",
+  "dgSpecHash": "qmEj0mPKiaEpfLjnLidRgITQ5IIduOxM1u8zBWXMbtmxN4b2O8YOXcPUMffK9m8pUG3QoknB6MGzNaFN7Ad8eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\felip\\source\\repos\\iti-backend-challenge\\src\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\felip\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\felip\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",

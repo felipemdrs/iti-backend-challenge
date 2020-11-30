@@ -94,3 +94,8 @@ C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\obj\Debug\netcoreapp
 C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\obj\Debug\netcoreapp3.1\Tests.dll
 C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\obj\Debug\netcoreapp3.1\Tests.pdb
 C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\obj\Debug\netcoreapp3.1\Tests.genruntimeconfig.cache
+C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\bin\Debug\netcoreapp3.1\Application.dll
+C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\felip\source\repos\iti-backend-challenge\src\Tests\bin\Debug\netcoreapp3.1\Domain.pdb

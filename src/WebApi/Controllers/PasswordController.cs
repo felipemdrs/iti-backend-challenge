@@ -18,7 +18,5 @@ namespace WebApi.Controllers
 
             return Ok(false);
         }
-
-        
     }
 }

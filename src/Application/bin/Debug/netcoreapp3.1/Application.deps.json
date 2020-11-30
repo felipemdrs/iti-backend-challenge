@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Application/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "MediatR": "9.0.0"
         },
         "runtime": {
@@ -20,6 +21,14 @@
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.0.0"
           }
+        }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "runtime": {
+          "Domain.dll": {}
         }
       }
     }
@@ -36,6 +45,11 @@
       "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
       "path": "mediatr/9.0.0",
       "hashPath": "mediatr.9.0.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
