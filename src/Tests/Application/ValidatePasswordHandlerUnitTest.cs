@@ -18,60 +18,30 @@ namespace Tests.Application
             ).Result);
         }
 
-        [Fact]
-        public void ShoulBeRejectPasswordWithFewCharacters()
+        [Theory]
+        [InlineData("ab")]
+        [InlineData("a1@")]
+        [InlineData("a1@D")]
+        [InlineData("a1@De")]
+        [InlineData("a1@Def")]
+        [InlineData("a1@Defg")]
+        [InlineData("a1@Defgh")]
+        public void ShoulBeRejectPasswordWithFewCharacters(string password)
         {
             Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "ab" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@D" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@De" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@Def" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@Defg" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "a1@Defgh" },
+                new ValidatePassword() { Password = password },
                 new CancellationTokenSource().Token
             ).Result);
         }
 
-        [Fact]
-        public void ShoulBeRejectPasswordWithRepeatedChars()
+        [Theory]
+        [InlineData("aa")]
+        [InlineData("AAAbbbCc")]
+        [InlineData("AbTp9!foo")]
+        public void ShoulBeRejectPasswordWithRepeatedChars(string password)
         {
             Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "aa" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "AAAbbbCc" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.False(_handler.Handle(
-                new ValidatePassword() { Password = "AbTp9!foo" },
+                new ValidatePassword() { Password = password },
                 new CancellationTokenSource().Token
             ).Result);
         }
@@ -106,65 +76,13 @@ namespace Tests.Application
         [Fact]
         public void ShouldBeValidateAllPassword()
         {
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9!fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9@fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9#fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9$fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9%fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9^fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9&fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9*fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9(fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9)fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9+fok" },
-                new CancellationTokenSource().Token
-            ).Result);
-
-            Assert.True(_handler.Handle(
-                new ValidatePassword() { Password = "AaTp9-fok" },
-                new CancellationTokenSource().Token
-            ).Result);
+            foreach (var value in "!@#$%^&*()-+")
+            {
+                Assert.True(_handler.Handle(
+                    new ValidatePassword() { Password = $"AaTp9{value}fok" },
+                    new CancellationTokenSource().Token
+                ).Result);
+            }
         }
     }
 }
