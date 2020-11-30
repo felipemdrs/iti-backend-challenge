@@ -1,5 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Domain.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -8,15 +9,24 @@ namespace WebApi.Controllers
     [ApiController]
     public class PasswordController : ControllerBase
     {
-        [HttpGet("checker")]
-        public async Task<IActionResult> StrengthChecker([FromQuery] string password)
+        private IMediator _mediator;
+
+        public PasswordController(IMediator mediator): base()
         {
-            if (string.IsNullOrEmpty(password))
+            _mediator = mediator;
+        }
+
+        [HttpPost("validate")]
+        public async Task<IActionResult> Validate([FromBody] ValidatePassword validatePassword)
+        {
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Password cannot be empty or null");
+                return BadRequest(ModelState);
             }
 
-            return Ok(false);
+            var isValid = await _mediator.Send(validatePassword).ConfigureAwait(false);
+
+            return Ok(isValid);
         }
     }
 }

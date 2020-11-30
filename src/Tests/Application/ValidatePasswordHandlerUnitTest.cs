@@ -1,4 +1,4 @@
-using Application;
+using Application.UseCases;
 using Domain.Commands;
 using System.Threading;
 using Xunit;

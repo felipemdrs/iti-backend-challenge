@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application
+namespace Application.UseCases
 {
     public class ValidatePasswordHandler : IRequestHandler<ValidatePassword, bool>
     {
