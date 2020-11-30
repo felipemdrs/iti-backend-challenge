@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "8D3UkOCQrVywnnMvbZKsPZrCAkcppAp7UFGCwHG0zh4htJ2bDqBtvk2iDDY5ov3UjrkI/m4L9NfSH6ORvywqpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\felip\\source\\repos\\iti-backend-challenge\\src\\WebApi\\WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\felip\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\felip\\.nuget\\packages\\mediatr.extensions\\0.6.0\\mediatr.extensions.0.6.0.nupkg.sha512",
+    "C:\\Users\\felip\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\felip\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'MediatR.Extensions 0.6.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "MediatR.Extensions",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
