@@ -1,4 +1,16 @@
+# Projeto
 
+- Desenvolvido utilizando .netcore 3.1
+
+# Execução
+
+```
+docker-compose up
+```
+
+```
+http://localhost:8080/swagger
+```
 
 ## Arquitetura
 

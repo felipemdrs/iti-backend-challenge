@@ -1,0 +1,11 @@
+version: '3'
+services:  
+  webapi:
+    image: felipemdrs/iti-challenge
+    build:
+      context: .
+      dockerfile: src/WebApi/Dockerfile
+    ports:
+        - 8080:80
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
